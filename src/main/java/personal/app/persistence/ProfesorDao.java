@@ -6,6 +6,5 @@ public interface ProfesorDao {
 
     void saveProfesor(Profesor profesor);
 
-    void findProfesor(String nombre, String apellido);
-
+    Profesor findProfesor(Long i);
 }

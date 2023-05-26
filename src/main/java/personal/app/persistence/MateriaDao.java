@@ -6,5 +6,5 @@ public interface MateriaDao {
 
     public void saveMateria(Materia materia);
 
-    public void findMateria(String nombreMateria);
+    public Materia findMateria(String nombreMateria);
 }

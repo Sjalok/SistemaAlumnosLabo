@@ -6,5 +6,5 @@ public interface AlumnoDao {
 
     void saveAlumno(Alumno alumno);
 
-    void findAlumno(Long dni);
+    Alumno findAlumno(Long dni);
 }

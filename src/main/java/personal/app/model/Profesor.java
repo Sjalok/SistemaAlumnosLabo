@@ -6,12 +6,15 @@ public class Profesor {
     private final String nombre;
     private final String apellido;
     private final String titulo;
+
+    private final long dni;
     private ArrayList<Materia> materiasDictadas;
 
-    public Profesor(String nombre, String apellido, String titulo, ArrayList<Materia> materiasDictadas) {
+    public Profesor(String nombre, String apellido, String titulo, long dni, ArrayList<Materia> materiasDictadas) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.titulo = titulo;
+        this.dni = dni;
         this.materiasDictadas = materiasDictadas;
     }
 
@@ -25,6 +28,10 @@ public class Profesor {
 
     public String getTitulo() {
         return titulo;
+    }
+
+    public long getDni() {
+        return dni;
     }
 
     public ArrayList<Materia> getMateriasDictadas() {
