@@ -24,5 +24,9 @@ public class Asignatura {
         return nota;
     }
 
+    public void cursarAsignatura() {
+        this.estado = Estado.CURSADO;
+    }
+
     enum Estado {APROBADO, CURSADO, NO_CURSADO}
 }

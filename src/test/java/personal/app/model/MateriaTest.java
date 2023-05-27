@@ -9,37 +9,37 @@ import static org.junit.Assert.*;
 public class MateriaTest {
     private static Profesor profesor;
 
+    private static Profesor porosor;
+
     private static Materia materia;
 
     private static Materia materiaux;
 
     private static Materia materiaux2;
 
-    private static Materia materiaux3;
-
     @Test
     public void testNewMateria() {
-        ArrayList<Materia> materias = new ArrayList<Materia>();
-        materias.add(materiaux);
-        materias.add(materiaux2);
-        materia = new Materia("Matematicas",2,1,profesor,materias);
+        materia = new Materia("Matematicas",2,1,profesor);
         assertEquals("Matematicas",materia.getNombre());
         assertEquals(2,materia.getAnio());
         assertEquals(1,materia.getCuatrimestre());
         assertEquals(profesor,materia.getProfesor());
-        assertEquals(materias,materia.getCorrelatividades());
-        assertEquals(2,materia.getCorrelatividades().size());
+        assertEquals(0,materia.getCorrelatividades().size());
     }
 
     @Test
-    public void testSetCorrelatividades() {
-        ArrayList<Materia> materias = new ArrayList<Materia>();
-        materias.add(materiaux);
-        materias.add(materiaux2);
-        materia = new Materia("Matematicas",2,1,profesor,materias);
-        assertEquals(2, materia.getCorrelatividades().size());
-        materias.add(materiaux3);
-        materia.setCorrelatividades(materias);
-        assertEquals(3,materia.getCorrelatividades().size());
+    public void testSetProfesor() {
+        materia = new Materia("Matematicas",2,1,profesor);
+        materia.setProfesor(porosor);
+        assertEquals(porosor,materia.getProfesor());
+    }
+
+    @Test
+    public void testAgregarCorrelatividades() {
+        materia = new Materia("Matematicas",2,1,profesor);
+        materia.agregarCorrelatividades(materiaux);
+        assertEquals(1,materia.getCorrelatividades().size());
+        materia.agregarCorrelatividades(materiaux2);
+        assertEquals(2,materia.getCorrelatividades().size());
     }
 }

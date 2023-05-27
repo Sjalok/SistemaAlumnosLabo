@@ -7,15 +7,14 @@ public class Materia {
     private final int anio;
     private final int cuatrimestre;
     private Profesor profesor;
-
     private ArrayList<Materia> correlatividades;
 
-    public Materia(String nombre, int anio, int cuatrimestre, Profesor profesor, ArrayList<Materia> correlatividades) {
+    public Materia(String nombre, int anio, int cuatrimestre, Profesor profesor) {
         this.nombre = nombre;
         this.anio = anio;
         this.cuatrimestre = cuatrimestre;
         this.profesor = profesor;
-        this.correlatividades = correlatividades;
+        correlatividades = new ArrayList<>();
     }
 
     public String getNombre() {
@@ -38,11 +37,11 @@ public class Materia {
         return correlatividades;
     }
 
-    public void setProfesor(Profesor profesor) {
-        this.profesor = profesor;
+    public void agregarCorrelatividades(Materia m) {
+        this.correlatividades.add(m);
     }
 
-    public void setCorrelatividades(ArrayList<Materia> correlatividades) {
-        this.correlatividades = correlatividades;
+    public void setProfesor(Profesor profesor) {
+        this.profesor = profesor;
     }
 }

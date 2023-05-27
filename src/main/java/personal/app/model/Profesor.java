@@ -10,12 +10,13 @@ public class Profesor {
     private final long dni;
     private ArrayList<Materia> materiasDictadas;
 
-    public Profesor(String nombre, String apellido, String titulo, long dni, ArrayList<Materia> materiasDictadas) {
+    public Profesor(String nombre, String apellido, String titulo, long dni, Materia m) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.titulo = titulo;
         this.dni = dni;
-        this.materiasDictadas = materiasDictadas;
+        materiasDictadas = new ArrayList<>();
+        materiasDictadas.add(m);
     }
 
     public String getNombre() {
@@ -38,7 +39,15 @@ public class Profesor {
         return materiasDictadas;
     }
 
-    public void setMateriasDictadas(ArrayList<Materia> materiasDictadas) {
-        this.materiasDictadas = materiasDictadas;
+    public void agregarMateriaADictar(Materia m) {
+        this.materiasDictadas.add(m);
+    }
+
+    public void sacarMateriaADictar(Materia m) {
+        if (this.materiasDictadas.contains(m)) {
+            this.materiasDictadas.remove(m);
+        } else {
+            System.out.println("Este profesor no dicta esa materia!");
+        }
     }
 }
