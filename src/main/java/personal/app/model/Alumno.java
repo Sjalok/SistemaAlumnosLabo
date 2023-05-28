@@ -9,12 +9,13 @@ public class Alumno {
 
     private final long dni;
 
-    private ArrayList<Asignatura> asignaturas;
+    private ArrayList<Asignatura> asignaturas; // yo planteo que este arraylist contiene las asignaturas que ya estan aprobadas
 
     public Alumno(String nombre, String apellido, long dni) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.dni = dni;
+        asignaturas = new ArrayList<>();
     }
 
     public String getNombre() {
@@ -33,7 +34,7 @@ public class Alumno {
         return asignaturas;
     }
 
-    public void setAsignaturas(ArrayList<Asignatura> asignaturas) {
-        this.asignaturas = asignaturas;
+    public void agregarAsignaturas(Asignatura asignatura) {
+        asignaturas.add(asignatura);
     }
 }

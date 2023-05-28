@@ -10,6 +10,9 @@ public class Profesor {
     private final long dni;
     private ArrayList<Materia> materiasDictadas;
 
+    // lo que pense que es que el profesor tenga la potestad de poner a los alumnos en una lista los que cursaron y tomar examen
+    // luego todo eso se relacione con la asignatura y materia del alumno.
+
     public Profesor(String nombre, String apellido, String titulo, long dni, Materia m) {
         this.nombre = nombre;
         this.apellido = apellido;

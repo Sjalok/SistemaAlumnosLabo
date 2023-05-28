@@ -28,5 +28,5 @@ public class Asignatura {
         this.estado = Estado.CURSADO;
     }
 
-    enum Estado {APROBADO, CURSADO, NO_CURSADO}
+    public enum Estado {APROBADO, CURSADO, NO_CURSADO}
 }

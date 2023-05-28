@@ -17,15 +17,14 @@ public class AlumnoTest {
         assertEquals("Franco",alumno.getNombre());
         assertEquals("Esparza",alumno.getApellido());
         assertEquals(43553102,alumno.getDni());
+        assertEquals(0,alumno.getAsignaturas().size());
     }
 
     @Test
-    public void testSetAlumnoAsignaturas(){
-        ArrayList<Asignatura> asignaturas = new ArrayList<Asignatura>();
-        asignaturas.add(asignatura1);
-        asignaturas.add(asignatura2);
+    public void testAgregarAlumnoAsignaturas() {
         alumno = new Alumno("Franco","Esparza",43553102);
-        alumno.setAsignaturas(asignaturas);
+        alumno.agregarAsignaturas(asignatura1);
+        alumno.agregarAsignaturas(asignatura2);
         assertEquals(2, alumno.getAsignaturas().size());
     }
 }
