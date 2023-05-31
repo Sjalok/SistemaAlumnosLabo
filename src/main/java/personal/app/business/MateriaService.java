@@ -1,4 +1,4 @@
 package personal.app.business;
 
-public class MateriaService {
+public interface MateriaService {
 }

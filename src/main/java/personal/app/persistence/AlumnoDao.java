@@ -4,7 +4,9 @@ import personal.app.model.Alumno;
 
 public interface AlumnoDao {
 
-    void saveAlumno(Alumno alumno);
+    public void saveAlumno(Alumno alumno);
 
-    Alumno findAlumno(Long dni);
+    public Alumno findAlumno(Long dni);
+
+    public void loadAlumno(Long dni, Alumno alumno);
 }

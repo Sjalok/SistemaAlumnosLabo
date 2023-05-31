@@ -16,12 +16,21 @@ public class AlumnoDaoMemoryImpl implements AlumnoDao{
     @Override
     public Alumno findAlumno(Long dni) {
         for (Long i: repositorioAlumnos.keySet()) {
-            if (dni.equals(i)) {
+            if (i.equals(dni)) {
                 System.out.println("Alumno encontrado!");
                 return repositorioAlumnos.get(i);
             }
         }
         System.out.println("El alumno no se encontro!");
         return null;
+    }
+
+    @Override
+    public void loadAlumno(Long dni, Alumno alumno) {
+        if (repositorioAlumnos.containsValue(alumno)) {
+            repositorioAlumnos.replace(alumno.getDni(), alumno);
+        } else {
+            System.out.println("No se encontro el alumno!");
+        }
     }
 }

@@ -1,4 +1,4 @@
 package personal.app.business;
 
-public interface AlumnoService {
+public class MateriaServiceImpl {
 }

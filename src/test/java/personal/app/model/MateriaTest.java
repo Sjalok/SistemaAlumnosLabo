@@ -19,24 +19,25 @@ public class MateriaTest {
 
     @Test
     public void testNewMateria() {
-        materia = new Materia("Matematicas",2,1,profesor);
+        materia = new Materia("Matematicas",2,1,profesor,1824);
         assertEquals("Matematicas",materia.getNombre());
         assertEquals(2,materia.getAnio());
         assertEquals(1,materia.getCuatrimestre());
+        assertEquals(1824,materia.getMateriaId());
         assertEquals(profesor,materia.getProfesor());
         assertEquals(0,materia.getCorrelatividades().size());
     }
 
     @Test
     public void testSetProfesor() {
-        materia = new Materia("Matematicas",2,1,profesor);
+        materia = new Materia("Matematicas",2,1,profesor,1482);
         materia.setProfesor(porosor);
         assertEquals(porosor,materia.getProfesor());
     }
 
     @Test
     public void testAgregarCorrelatividades() {
-        materia = new Materia("Matematicas",2,1,profesor);
+        materia = new Materia("Matematicas",2,1,profesor,1489);
         materia.agregarCorrelatividades(materiaux);
         assertEquals(1,materia.getCorrelatividades().size());
         materia.agregarCorrelatividades(materiaux2);

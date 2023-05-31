@@ -7,4 +7,6 @@ public interface MateriaDao {
     public void saveMateria(Materia materia);
 
     public Materia findMateria(String nombreMateria);
+
+    public void loadMateria(Materia materia);
 }
