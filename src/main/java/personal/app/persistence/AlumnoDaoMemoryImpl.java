@@ -26,7 +26,7 @@ public class AlumnoDaoMemoryImpl implements AlumnoDao{
     }
 
     @Override
-    public void loadAlumno(Long dni, Alumno alumno) {
+    public void loadAlumno(Alumno alumno) {
         if (repositorioAlumnos.containsValue(alumno)) {
             repositorioAlumnos.replace(alumno.getDni(), alumno);
         } else {

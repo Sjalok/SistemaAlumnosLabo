@@ -24,6 +24,10 @@ public class Asignatura {
         return nota;
     }
 
+    public void setNota(Integer nota) {
+        this.nota = nota;
+    }
+
     public void cursarAsignatura() {
         this.estado = Estado.CURSADO;
     }

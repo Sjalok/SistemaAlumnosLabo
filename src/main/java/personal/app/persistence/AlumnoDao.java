@@ -8,5 +8,5 @@ public interface AlumnoDao {
 
     public Alumno findAlumno(Long dni);
 
-    public void loadAlumno(Long dni, Alumno alumno);
+    public void loadAlumno(Alumno alumno);
 }

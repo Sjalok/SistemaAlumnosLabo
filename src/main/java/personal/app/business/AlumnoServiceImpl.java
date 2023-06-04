@@ -8,37 +8,22 @@ import personal.app.persistence.AlumnoDaoMemoryImpl;
 import static personal.app.model.Asignatura.Estado.CURSADO;
 
 public class AlumnoServiceImpl {
-    private static AlumnoDaoMemoryImpl alumnoDaoMemory;
+    private static final AlumnoDaoMemoryImpl alumnoDaoMemory = new AlumnoDaoMemoryImpl();
 
     // plantear que el profesor es el que tenga aprobar Asignatura y luego agregarla la lista de asignaturas del alumno
 
-    public void asignaturaExamen(Alumno alumno,Asignatura asignatura, int nota) {
-        if (asignatura.getEstado() != CURSADO) {
-            System.out.println("No se puede rendir la asignatura si la asignatura no esta cursada!");
-            return;
-        }
-
-        if (nota < 6) { // este if va a ir en presentation
-            System.out.println("No se puede aprobar con menos de 6!");
-            return;
-        } else if (nota > 10) {
-            System.out.println("No hay una nota mayora a 10!");
-            return;
-        }
-
+    public void aprobarAsignatura(Alumno alumno, Asignatura asignatura, int nota) {
         if (!chequearCorrelatividades(alumno,asignatura)) {
             System.out.println("Le faltan aprobar correlatividades!");
             return;
         }
 
-        aprobarAsignatura(alumno,asignatura);
-    }
-
-    public void aprobarAsignatura(Alumno alumno, Asignatura asignatura) {
+        asignatura.setNota(nota);
         alumno.agregarAsignaturas(asignatura);
+        alumnoDaoMemory.loadAlumno(alumno);
     }
 
-    private boolean chequearCorrelatividades(Alumno alumno, Asignatura asignatura) {
+    public boolean chequearCorrelatividades(Alumno alumno, Asignatura asignatura) {
         String helper;
         Materia aux = asignatura.getMateria();
         boolean flag;
